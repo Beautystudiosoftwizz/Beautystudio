@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="row text center" id="parm">
+<div class="col-md-12">
+<h3 id="contact">Contacts</h3>
+</div>
+</div>
+
+
+<div class="row " id="exe">
+<div class="col-md-12">
+<h4 id="italic">Experience the Art of Caring</h4>
+</div>
+<div class="col-md-12">
+<h3 class="head" >BEAUTY STUDIO SERVICES</h3>
+<p id="font">Questions? Comments? We’d love to hear your feedback about Lemon Spa! Please fill out the 
+fields below and help us.</p>
+</div>
+</div>
+<br>
+<br>
+<div class="row">
+<div class="col-md-4">
+<img src="{% static 'h3.jpg' %}"  height="800" width="100%">
+</div>
+<div class="col-md-offset-1 col-md-6 col-md-offset-1">
+  <form action="/insertcontact" method="post">
+{% csrf_token %}
+
+    <label for="fname" id="font">First Name</label>
+    <input type="text" id="fon" name="firstname" placeholder="Your name.."><br>
+
+    <label for="lname" id="font">Last Name</label>
+    <input type="text" id="fon" name="lastname" placeholder="Your last name.."><br>
+	
+	<label for="pno" id="font">Phoneno</label>
+    <input type="text" id="fon" name="phone"   pattern="[6|7|8|9][0-9]{9}" required placeholder="enter your number..." /><br>
+
+    <label for="country" id="font">City</label>
+	 <input type="text" id="fon" name="city" placeholder="Your last name.."><br>
+   <!-- <select id="country" id="fon" name="city">
+      <option value="Bathinda">Bathinda</option>
+      <option value="Moga">Moga</option>
+     
+    </select><br>!-->
+
+    <label for="subject" id="font">Subject</label>
+    <textarea id="fon" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+<br>
+<br>
+<br>
+    <input type="submit" value="Submit" id="font">
+
+  </form>
+</div>
+</div>
+
+<div id="map-container-google-3" class="z-depth-1-half map-container-3">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1723.8531317452594!2d74.95446180968709!3d30.21693000296942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391732ba9cabc72b%3A0xc1d6011d576bd07f!2sStreet%20Number%2013%2C%20Guru%20Teg%20Bahadar%20Nagar%2C%20Shaibzada%20Jujhar%20Singh%20Nagar%2C%20Bathinda%2C%20Punjab%20151001!5e0!3m2!1sen!2sin!4v1588687326174!5m2!1sen!2sin" width="1500" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div>
+
+
+{% endblock %}
